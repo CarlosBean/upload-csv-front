@@ -10,8 +10,6 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 /*PAGES*/
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { LoginComponent } from './pages/login/login.component';
 import { SharedModule } from './components/shared.module';
 import { TopbarComponent } from './layouts/topbar/topbar.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
@@ -19,8 +17,6 @@ import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    LoginComponent,
     TopbarComponent,
     SidebarComponent
   ],
