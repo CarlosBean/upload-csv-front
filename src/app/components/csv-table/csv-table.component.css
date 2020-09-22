@@ -1,0 +1,87 @@
+:host {
+    display: grid;
+    overflow: auto;
+    padding-bottom: 1em;
+    font-size: 16px;
+}
+
+.columns-grid {
+    display: grid;
+    grid-template-rows: auto;
+    column-gap: 25px;
+}
+
+.column {
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(auto-fit, 50px);
+    transition: box-shadow 0.3s;
+}
+
+.column .cell {
+    border: 1px solid var(--gray-400);
+    border-top: none;
+    padding: 0 1em;
+    overflow-x: hidden;
+    height: 100%;
+    min-height: 50px;
+    position: relative;
+}
+
+.column span:last-child() {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.column .cell > span {
+    line-height: 50px;
+    white-space: nowrap;
+}
+
+.cell .fix-block {
+    background-color: var(--white);
+    height: calc(100% - 1px);
+    position: absolute;
+    right: 0;
+    top: 1px;
+    width: 1em;
+}
+
+.accepted { 
+    box-shadow: 2px 2px 4px 1px rgb(0, 0, 0, 0.15);
+    color: var(--primary);
+}
+
+.accepted .cell { border-color: var(--primary) }
+
+.ignored { color: var(--gray-500) }
+
+.ignored select {
+    background-color: var(--gray-200);
+    color: var(--gray-700);
+    border: transparent;
+}
+
+select {
+    text-transform: capitalize;
+    padding: 10px;
+    background-color: #d6ecff;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    /* background-color: var(--primary);
+    color: var(--white);
+    border: transparent;*/
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    outline: transparent;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+select option {
+    background-color: var(--white);
+    color: var(--dark) !important;
+    border: transparent;
+    padding: 1em;
+}

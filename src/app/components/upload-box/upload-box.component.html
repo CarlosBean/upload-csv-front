@@ -1,0 +1,17 @@
+<ng-container>
+    <div class="thumbnail">
+        <h4>Importación de archivos</h4>
+        <img src="../../../assets/icons/csv-icon.svg" alt="xls-sheet.svg">
+        <p>{{ rawFile?.name}}</p>
+
+        <button *ngIf="!rawFile" class="button primary" (click)="uploader.click()">
+            Cargar Archivo
+        </button>
+
+        <p class="text-secondary">Para realizar la importación, los tipos de
+            archivos soportados son .xls .xlsx .csv </p>
+
+        <input hidden type="file" #uploader (change)="uploadFile($event)"
+            accept=".csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+    </div>
+</ng-container>

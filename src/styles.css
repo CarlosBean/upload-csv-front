@@ -1,1 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/normalize.css';
+@import 'assets/styles/variables.css';
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
+
+html, body { height: 100%; }
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark);
+}
+
+h2, h3 { font-weight: 600 !important }
+
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    color: var(--primary);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    /* line-height: 38px */;
+    letter-spacing: inherit;
+    text-decoration: none;
+    white-space: nowrap;  
+    background-color: transparent;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border: transparent;
+    cursor: pointer;
+    outline: 0;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+button:focus,
+input[type='submit']:focus,
+input[type='reset']:focus,
+input[type='button']:focus {
+    outline: 0;
+}
+
+button:active,
+input[type='submit']:focus,
+input[type='reset']:focus,
+input[type='button']:focus {
+    transform: scale(0.98);
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+}
+
+button.button:disabled, .btn-disabled {
+    background: var(--gray-400) !important;
+    color: var(--gray-700) !important;
+    box-shadow: none;
+    cursor: default;
+}
+
+button.primary {
+    background: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow-button);
+}
+
+.text-center { text-align: center }
+.text-left { text-align: left }
+.text-righ { text-align: right }
+.text-secondary { color: var(--gray-600) }
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.d-block { display: block }
+.d-inline { display: inline-block }
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-radio:last-child {
+    grid-column: 2 / 4;
+}
+
+.step-text {
+    font-size: 16px;
+}
+
+.module-title { 
+    position: absolute;
+    left: 0;
+    top: 10px;
+    margin: 0;
+    width: 250px;
+    z-index: 1;
+  }
+
+

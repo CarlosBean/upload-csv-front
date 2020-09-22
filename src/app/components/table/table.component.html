@@ -1,0 +1,41 @@
+<mat-paginator [pageSize]="10" showFirstLastButtons></mat-paginator>
+<div class="shadow-table">
+
+    <table #table class="table" mat-table matSort [dataSource]="dataSource">
+
+        <!-- dynamic columns -->
+        <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef [hidden]="column === '_id'"> {{ column | titlecase }}
+            </th>
+            <td mat-cell *matCellDef="let element" [hidden]="column === '_id'">
+
+                <!-- cell data -->
+                <span [ngClass]="getStatusClass(column, element.status)"
+                    *ngIf="column !== 'action'">{{ formatText(element[column]) }}</span>
+
+                <!-- menu options -->
+                <div *ngIf="column === 'action'">
+                    <button class="list-row-button" [matMenuTriggerFor]="menu">
+                        <i class="fas fa-ellipsis-v fa-lg fa-fw"></i>
+                    </button>
+
+                    <mat-menu class="text-center" #menu="matMenu">
+                        <ng-template matMenuContent>
+                            <button class="btn-block button-menu" *ngFor="let button of menuButtons"
+                                (click)="emitAction(button, element._id)">
+                                {{ button }}
+                            </button>
+                        </ng-template>
+                    </mat-menu>
+                </div>
+
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <!-- <div class="table-radius"></div>
+        <img *ngIf="isloading" src="assets/images/placeholder_loading.gif" alt="loading"> -->
+</div>

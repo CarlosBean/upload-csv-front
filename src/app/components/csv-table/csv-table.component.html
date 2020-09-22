@@ -1,0 +1,16 @@
+<div *ngIf="data" class="columns-grid"
+    [style.grid-template-columns]="'repeat('+ data?.length + ', minmax(150px, 1fr))'">
+    <div class="column" *ngFor="let column of data, let i = index"
+        [class]="selection[i].split('-')[0] === 'ignore' ? 'ignored' : 'accepted'">
+
+        <select name="column + {{i}}" (change)="onChangeSelect($event, i)">
+            <option [value]="dbColumn + '-' + i" *ngFor="let dbColumn of dbColumns">{{ dbColumn }}
+            </option>
+        </select>
+
+        <span class="d-inline cell" *ngFor="let cell of column">
+            <span>{{ cell }}</span>
+            <span class="fix-block"></span>
+        </span>
+    </div>
+</div>

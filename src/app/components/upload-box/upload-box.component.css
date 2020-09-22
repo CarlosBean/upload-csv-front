@@ -1,0 +1,22 @@
+:host {
+    display: grid;
+    place-content: center;
+    overflow-x: auto;
+    height: 100%;
+}
+
+.thumbnail {
+    max-width: 450px;
+    text-align: center;
+}
+
+.thumbnail p {
+    font-size: 16px;
+}
+
+.thumbnail img {
+    width: 100px;
+    display: block;
+    margin: auto;
+    padding-bottom: 1em;;
+}

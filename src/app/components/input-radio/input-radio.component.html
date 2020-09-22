@@ -1,0 +1,11 @@
+<div class="container text-left">
+    <div *ngFor="let radio of options" class="container-radio" [class.radio-disabled]="!radio.selected">
+        <div class="radio" (click)="selectRadio(radio)">
+            <span class="inner"></span>
+        </div>
+        <span class="label">{{ radio.label }}</span>
+
+        <input *ngIf="radio.id === 'custom'" maxlength="1" type="text" [(ngModel)]="radio.value"
+            (ngModelChange)="action.emit(radio)" [disabled]="!radio.selected">
+    </div>
+</div>

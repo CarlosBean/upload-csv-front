@@ -17,20 +17,6 @@ main {
     margin: 2em;
 }
 
-.thumbnail-container {
-    display: grid;
-    place-content: center;
-    overflow-x: auto;
-    height: 100%;
-}
-
-.thumbnail {
-    max-width: 450px;
-    text-align: center;
-}
-
-.thumbnail p { font-size: 20px }
-
 .topbar-table {
     display: flex;
     justify-content: space-between;

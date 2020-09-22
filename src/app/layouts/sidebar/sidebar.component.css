@@ -1,0 +1,35 @@
+:host {
+    box-shadow: var(--shadow-right-1);
+}
+
+aside h2 {
+    margin-left: 1em;
+    height: 60px;
+}
+
+ul li {
+    background-color: aliceblue;
+    border-bottom-right-radius: 80px;
+    border-top-right-radius: 80px;
+    color: var(--primary);
+    cursor: pointer;
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 1em;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+    outline: transparent;
+}
+.actived {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+}
+
+ul li .icon {
+    vertical-align: sub;
+    margin: 0 1em;
+}
+
+.actived .icon svg *  {
+    fill: var(--white);
+}
